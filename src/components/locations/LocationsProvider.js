@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react"
 
 export const LocationContext = React.createContext()
 
-export const LocationProvider = (props) => {
+export const LocationsProvider = (props) => {
     const [locations, setLocations] = useState([])
 
     const getLocations = () => {
-        return fetch("http:localhost:8808/locations")
+        return fetch("http://localhost:8088/locations")
         .then(res => res.json())
         .then(setLocations)
     }
